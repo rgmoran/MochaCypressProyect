@@ -25,4 +25,3 @@
         b)      npx cypress run --spec cypress/integration/file.spec.js   -> to run a specific test file
 ##############################################################
 
-        by command to use CLY system to run cypress project
