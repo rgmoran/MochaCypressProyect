@@ -10,6 +10,7 @@ describe('suite of test of cypress in todomvc page', function(){
         cy.get('.new-todo').type("Create a awesome thing{enter}")
         cy.get('ul.todo-list .toggle').click()
         cy.get('ul.todo-list label').should('have.text','Create a awesome thing')
+        cy.get('ul.todo-list li').should('have.class', 'completed')
         //cy.contains("Clear completed").click()
     })
 });
