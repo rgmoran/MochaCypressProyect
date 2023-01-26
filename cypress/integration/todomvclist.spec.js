@@ -1,26 +1,29 @@
 /// <reference types="cypress"/>
 
+import { TodoListPage } from "../pages/todoListPage";
+
 describe('suite of test of cypress in todomvc page', function() {
+    const todoObject = new TodoListPage()
 
     beforeEach('go to the webpage', () => {
-        cy.visit('https://todomvc-app-for-testing.surge.sh/')
-        cy.get('.new-todo').type("Create a awesome thing{enter}")
+        todoObject.navigate()
+        todoObject.addTodo("Thing to be Great!!!")
+        todoObject.addTodo("write something that you have to do")
+        todoObject.addTodo("make your days more efficiently")
+        todoObject.addTodo("Just Do IT!!!")
+        todoObject.addTodo("SIIIIIIIIIIUUUUUUUUUUU!!! XD")
     })
 
     it('should pass assertions aboud the first todo list element', () => {
-        cy.get('ul.todo-list label').should('have.text','Create a awesome thing')
-        cy.get('.toggle').should('not.be.checked')
+        todoObject.validateElement(0, "SIIIIIIIIIIUUUUUUUUUUU!!! XD")
     })
 
     it('should be mark as a todo element as a completed', () => {
-        cy.get('ul.todo-list .toggle').click()
-        cy.get('ul.todo-list li').should('have.class', 'completed')
+        todoObject.checkTodoElement(1)
     })
 
     it('should be clear the todo list', () => {  
-        cy.get('ul.todo-list .toggle').click()     
-        cy.contains('Clear').click()
-        cy.get('.todo-list').should('not.have.descendants')
-
+        todoObject.checkTodoElement(0)
+        todoObject.clearTodoList()      
     })
 });
