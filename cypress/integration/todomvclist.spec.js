@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('suite of test of cypress in todomvc page', function(){
+describe('suite of test of cypress in todomvc page', function() {
 
     beforeEach('go to the webpage', () => {
         cy.visit('https://todomvc-app-for-testing.surge.sh/')
