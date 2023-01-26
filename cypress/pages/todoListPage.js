@@ -47,7 +47,7 @@ export class TodoListPage {
     showAllTodoElement(){
         cy.contains("All").click()
         cy.get('.todo-list li').should('have.length.lessThan', 5)
-        cy.get('.todo-list li').should('have.length', 3)
+        cy.get('.todo-list li').should('have.length', 1)
     }
 
     showActiveTodoElement(){

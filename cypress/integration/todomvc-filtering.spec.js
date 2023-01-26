@@ -3,14 +3,13 @@
 import { TodoListPage } from "../pages/todoListPage"
 
 describe('filtering todo elements', () =>{
-
     const todoObject = new TodoListPage()
 
     beforeEach('loading necesary elements', () =>{
         todoObject.navigate()
 
         todoObject.addTodo("write importan thing just over here")
-        todoObject.checkTodoElement()
+        todoObject.checkTodoElement(0)
     })
 
     it('flitering to "Active" todo elements', () => {
