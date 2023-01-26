@@ -7,8 +7,9 @@ describe('suite of test of cypress in todomvc page', function(){
     })
 
     it('should be able to add a new to do element', () => {
-        cy.get('.new-todo', {timeout:3000}).type("Create a awesome thing{enter}")
-        cy.get('.toggle',{timeout:5000}).click()
-        cy.contains("Clear completed").click()
+        cy.get('.new-todo').type("Create a awesome thing{enter}")
+        cy.get('ul.todo-list .toggle').click()
+        cy.get('ul.todo-list label').should('have.text','Create a awesome thing')
+        //cy.contains("Clear completed").click()
     })
 });
