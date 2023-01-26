@@ -1,2 +1,4 @@
 # adding node_modules to being ignoring for git setup
 node_modules
+
+videos
